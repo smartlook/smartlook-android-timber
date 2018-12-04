@@ -14,19 +14,21 @@
 
 package com.naman14.timber;
 
-import android.content.Context;
-import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
+import android.util.Log;
 
 import com.afollestad.appthemeengine.ATE;
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.core.CrashlyticsCore;
 import com.naman14.timber.permissions.Nammu;
+import com.naman14.timber.smartlook.SmartlookPreferences;
 import com.naman14.timber.utils.PreferencesUtility;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 import com.nostra13.universalimageloader.utils.L;
+import com.smartlook.sdk.smartlook.Smartlook;
+import com.smartlook.sdk.smartlook.api.client.Server;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -109,7 +111,19 @@ public class TimberApp extends MultiDexApplication {
                     .commit();
         }
 
+        smartlookInit();
     }
 
+    private void smartlookInit() {
+        int server = SmartlookPreferences.loadServerSelection(this);
+        String apiKey = SmartlookPreferences.loadApiKey(this, server);
+        boolean debugSelectors = SmartlookPreferences.loadDebugSelectors(this);
+
+        Log.i("SmartlookInit", "Initialize smartlook: server=[" + new Server(server).getBaseRawUrl() + "] apiKey=[" + apiKey + "] debugSelectors=[" + debugSelectors + "]");
+
+        Smartlook.changeServer(server);
+        Smartlook.debugSelectors(debugSelectors);
+        Smartlook.init(apiKey);
+    }
 
 }

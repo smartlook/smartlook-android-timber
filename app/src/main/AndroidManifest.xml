@@ -94,6 +94,10 @@
 
         </activity>
 
+        <activity
+            android:name=".smartlook.SmartlookSettingsActivity"
+            android:label="@string/smartlook_settings" />
+
         <receiver android:name=".helpers.MediaButtonIntentReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON" />

@@ -23,8 +23,6 @@ import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.transition.Transition;
-import android.transition.TransitionInflater;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Toast;
@@ -43,6 +41,7 @@ import com.naman14.timber.nowplaying.Timber3;
 import com.naman14.timber.nowplaying.Timber4;
 import com.naman14.timber.nowplaying.Timber5;
 import com.naman14.timber.nowplaying.Timber6;
+import com.naman14.timber.smartlook.SmartlookSettingsActivity;
 
 import java.util.ArrayList;
 
@@ -117,6 +116,10 @@ public class NavigationUtils {
         final Intent intent = new Intent(context, SettingsActivity.class);
         intent.setAction(Constants.NAVIGATE_SETTINGS);
         context.startActivity(intent);
+    }
+
+    public static void navigateToSmartlookSettings(Activity context) {
+        context.startActivity(new Intent(context, SmartlookSettingsActivity.class));
     }
 
     public static void navigateToSearch(Activity context) {
@@ -200,5 +203,4 @@ public class NavigationUtils {
         }
 
     }
-
 }

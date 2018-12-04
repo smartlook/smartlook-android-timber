@@ -167,4 +167,19 @@
     <string name="now_playing_no_track_selected">\"No current track selected.</string>
     <string name="lyrics_loading">Loading...</string>
 
+    <string name="smartlook_settings">Smartlook settings</string>
+    <string name="apply_changes_n_this_will_restart_the_app">Apply changes and save\n(this will restart the app)</string>
+    <string name="api_key">Api key</string>
+    <string name="reload_ndefault">Reload\ndefault</string>
+    <string name="exit_dialog_message">All unsaved settings will be lost!</string>
+    <string name="smartlook_server">Smartlook server:</string>
+    <string name="smartlook_api_key">Smartlook api key:</string>
+    <string name="show_view_selector_on_click">Show View \"selector\" on click:</string>
+
+    <string-array name="server_array">
+        <item>Alfa (manager.alfa.smartlook.com)</item>
+        <item>Beta (manager.beta.smartlook.com)</item>
+        <item>Production (manager.smartlook.com)</item>
+    </string-array>
+
 </resources>
