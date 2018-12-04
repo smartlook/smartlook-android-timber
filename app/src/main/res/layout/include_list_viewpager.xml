@@ -3,11 +3,9 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:id="@+id/content_root"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:id="@+id/content_root">
 
-    <com.naman14.timber.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <com.naman14.timbersmartlook.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:sothree="http://schemas.android.com/apk/res-auto"
         android:id="@+id/sliding_layout"
         android:layout_width="match_parent"
@@ -29,7 +27,7 @@
 
         </FrameLayout>
 
-    </com.naman14.timber.slidinguppanel.SlidingUpPanelLayout>
+    </com.naman14.timbersmartlook.slidinguppanel.SlidingUpPanelLayout>
 
 
 </FrameLayout>

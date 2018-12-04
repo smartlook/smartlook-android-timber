@@ -5,8 +5,7 @@
     android:duration="240">
 
     <transitionSet   >
-        <transition
-            class="com.naman14.timber.transition.PlayTransition"/>
+        <transition class="com.naman14.timbersmartlook.transition.PlayTransition" />
         <!--<targets>-->
             <!--<target android:excludeId="@id/icon" /> />-->
         <!--</targets>-->
