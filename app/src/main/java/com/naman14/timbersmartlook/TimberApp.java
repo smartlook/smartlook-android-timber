@@ -18,6 +18,7 @@ import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 
 import com.afollestad.appthemeengine.ATE;
+import com.crashlytics.android.Crashlytics;
 import com.naman14.timbersmartlook.permissions.Nammu;
 import com.naman14.timbersmartlook.smartlook.SmartlookPreferences;
 import com.naman14.timbersmartlook.utils.PreferencesUtility;
@@ -31,6 +32,8 @@ import com.smartlook.sdk.smartlook.api.client.Server;
 import java.io.IOException;
 import java.io.InputStream;
 
+import io.fabric.sdk.android.Fabric;
+
 public class TimberApp extends MultiDexApplication {
 
 
@@ -43,6 +46,8 @@ public class TimberApp extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        Fabric.with(this, new Crashlytics());
+
         mInstance = this;
 
         ImageLoaderConfiguration localImageLoaderConfiguration = new ImageLoaderConfiguration.Builder(this).imageDownloader(new BaseImageDownloader(this) {
@@ -51,7 +56,8 @@ public class TimberApp extends MultiDexApplication {
             @Override
             protected InputStream getStreamFromNetwork(String imageUri, Object extra) throws IOException {
                 if (prefs.loadArtistAndAlbumImages())
-                    return super.getStreamFromNetwork(imageUri, extra);
+                    return super
+                            .getStreamFromNetwork(imageUri, extra);
                 throw new IOException();
             }
         }).build();

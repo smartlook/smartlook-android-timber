@@ -121,7 +121,7 @@
         <!--use your own api key for fabric-->
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="@string/fabric_api_key" />
+            android:value="53abbf64e8791d3fc54d80fbec9aca2e82ff9e97" />
 
         <meta-data
             android:name=
